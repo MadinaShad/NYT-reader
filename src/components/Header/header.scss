@@ -1,0 +1,36 @@
+@import './../../sass/variables';
+@import './../../sass/functions';
+@import './../../sass/mixins';
+
+.header {
+  padding: rem(20) rem(40);
+  border-bottom: rem(1) solid $border-color-dark;
+
+  &__logo {
+    display: block;
+    max-width: 100%;
+    width: rem(500);
+    margin: 0 auto;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.nav-list {
+  @include flex;
+  border-bottom: rem(1) solid $border-color-light;
+
+  &__item {
+    margin: rem(15);
+    font-family: $font-family-nav;
+    &:hover {
+      color: $font-color-hover;
+      cursor: pointer;
+    }
+    &--active {
+      color: $font-color-hover;
+      text-decoration: underline;
+    }
+  }
+}

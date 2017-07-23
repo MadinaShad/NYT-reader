@@ -1,0 +1,59 @@
+@import './../../sass/variables';
+@import './../../sass/functions';
+@import './../../sass/mixins';
+
+.section-articles {
+  @include flex;
+  max-width: 1920px;
+  padding: rem(12) 0;
+}
+
+.article-item {
+  background-color: $white;
+  box-shadow: 0 rem(2) rem(4) $border-color-light;
+  margin-bottom: rem(15);
+  @include flex(column, flex-start);
+  @include desktop-screen {
+    flex-basis: rem(302);
+    margin: rem(12);
+    border-radius: rem(2);
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      transform: translateY(-1%);
+      box-shadow: 0 rem(8) rem(22) lighten($border-color-dark, 50%);
+      .article-item__image {
+        filter: brightness(95%);
+      }
+    }
+  }
+  @include tablet-screen {
+    flex-basis: rem(260);
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    margin: rem(15) auto 0;
+    filter: brightness(85%);
+    @include desktop-screen {
+      width: calc(100% + 30px);
+      margin: 0 -15px 0;
+    }
+  }
+
+  &__link-to-news {
+    color: $black;
+    padding: 0 rem(15);
+    &:focus,
+    &:active,
+    &:visited {
+      color: $font-color-base;
+    }
+  }
+
+  &__date {
+    color: $font-color-date;
+    font-size: rem(12);
+  }
+}

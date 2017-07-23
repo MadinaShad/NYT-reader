@@ -1,0 +1,5 @@
+// Px to Rem calculator
+// @param {Int} pixels to calc
+@function rem($target-px) {
+  @return ($target-px / 16) *1rem;
+}
